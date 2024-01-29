@@ -1,4 +1,4 @@
-import { html, define, Component } from 'hybrids';
+import { html, define } from 'hybrids';
 
 interface ThemeSwitcher extends HTMLElement {
     theme: string;
@@ -12,8 +12,8 @@ export function toggleTheme(host: ThemeSwitcher) {
 export default define<ThemeSwitcher>({
     tag: 'theme-switcher',
     theme: 'light',
-    content: () => html`
-    <button onclick="${toggleTheme}">
+    render: () => html`
+    <button part="toggle-button" onclick="${toggleTheme}">
       Toggle Theme
     </button>
     `,

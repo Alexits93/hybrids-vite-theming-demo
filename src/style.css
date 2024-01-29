@@ -2,3 +2,16 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
 }
+
+theme-switcher::part(toggle-button) {
+  background-color: var(--button-background);
+  color: var(--button-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+theme-switcher::part(toggle-button):hover {
+  background-color: var(--button-hover-background);
+}

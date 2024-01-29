@@ -4,14 +4,24 @@
 
     --background-color-dark: black;
     --text-color-dark: white;
+
+    --button-background-light: pink;
+    --button-background-dark: red;
+
+    --button-hover-background-light: magenta;
+    --button-hover-background-dark: crimson
 }
 
 [data-theme="light"] {
     --background-color: var(--background-color-light);
     --text-color: var(--text-color-light);
+    --button-background: var(--button-background-light);
+    --button-hover-background: var(--button-hover-background-light)
 }
 
 [data-theme="dark"] {
     --background-color: var(--background-color-dark);
     --text-color: var(--text-color-dark);
+    --button-background: var(--button-background-dark);
+    --button-hover-background: var(--button-hover-background-dark)
 }

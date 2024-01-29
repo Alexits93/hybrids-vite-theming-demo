@@ -7,7 +7,7 @@ interface DisplayComponent extends HTMLElement {
 export default define<DisplayComponent>({
     tag: 'display-component',
     theme: () => document.body.getAttribute('data-theme') || 'light',
-    content: ({ theme }) => html`
+    render: ({ theme }) => html`
     <div>Current Theme: ${theme}</div>
   `,
 });
