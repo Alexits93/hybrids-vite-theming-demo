@@ -1,6 +1,6 @@
 import { html, define } from 'hybrids';
 
-interface DisplayComponent {
+interface DisplayComponent extends HTMLElement {
     theme: string;
 }
 
