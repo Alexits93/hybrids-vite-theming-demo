@@ -5,9 +5,11 @@
     --background-color-dark: black;
     --text-color-dark: white;
 
+    --button-background: pink;
     --button-background-light: pink;
     --button-background-dark: red;
 
+    --button-hover-background: magenta;
     --button-hover-background-light: magenta;
     --button-hover-background-dark: crimson
 }
