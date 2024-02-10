@@ -5,10 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
-    <script type="module" src="./src/main.ts"></script>
   </head>
   <body>
-    <display-component></display-component>
-    <theme-switcher></theme-switcher>
+    <app-shell>
+      <app-display-component></app-display-component>
+      <app-theme-switcher></app-theme-switcher>
+    </app-shell>
+
+    <script type="module" src="./src/main.ts"></script>
   </body>
 </html>
