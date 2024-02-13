@@ -1,7 +1,7 @@
-import { html, define } from 'hybrids';
+import { html, define, dispatch } from 'hybrids';
 
 export interface ThemeSwitcher extends HTMLElement {
-    theme: string;
+    theme: { value: string };
 }
 
 /**
@@ -11,16 +11,23 @@ export interface ThemeSwitcher extends HTMLElement {
  * @return {void} 
  */
 export function toggleTheme(host: ThemeSwitcher) {
-    host.theme = host.theme === 'light' ? 'dark' : 'light';
-    document.body.setAttribute('data-theme', host.theme);
+    host.theme.value = host.theme.value === 'light' ? 'dark' : 'light';
+    document.body.setAttribute('data-theme', host.theme.value);
+    dispatch(host, 'context-request');
 }
 
 define<ThemeSwitcher>({
     tag: 'app-theme-switcher',
-    theme: 'light',
-    render: () => html`
+    theme: {
+        value: undefined,
+        connect: (host: ThemeSwitcher, key: string, _invalidate: Function) => {
+            //@ts-ignore
+            host[key] = { value: document.body.getAttribute('data-theme') || 'light' };
+        },
+    },
+    render: ({ theme }) => html`
     <button part="toggle-button" onclick="${toggleTheme}">
-      Toggle Theme
+      Toggle Theme to ${theme && theme.value === 'light' ? 'dark' : 'light'}
     </button>
     `,
 });
