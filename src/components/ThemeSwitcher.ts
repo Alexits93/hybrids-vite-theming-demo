@@ -27,7 +27,7 @@ define<ThemeSwitcher>({
     },
     render: ({ theme }) => html`
     <button part="toggle-button" onclick="${toggleTheme}">
-      Toggle Theme to ${theme && theme.value === 'light' ? 'dark' : 'light'}
+      Toggle Theme to ${theme && theme.value === 'light' && 'dark' || 'light'}
     </button>
     `,
 });

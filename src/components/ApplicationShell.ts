@@ -19,7 +19,7 @@ const getThemeContext = (host: AppComponent, event: CustomEvent) => {
 define<AppComponent>({
     tag: "app-shell",
     theme: {
-        value: undefined,
+        value: undefined
     },
     content: (h) => html`
         <app-display-component theme="${h.theme}"></app-display-component>
